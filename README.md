@@ -361,3 +361,30 @@
 * Vertically in our case all the Items are as tall as the Tallest element(One item given height of 150px) of the Flex Item
 * Centering is very easy with align-items: center
 * **Default of align-items is stretch**
+* Flex Container and Flex Items Properties
+![flex](img/flexbox.png)
+
+### Spacing And Aligning Items
+
+* Checkout the flexbox image
+* For adding space between flex-items without space-around, we can use margin
+* Or gap in the flex-container
+
+### The flex property
+
+* flex property shorthand for flex-grow, flex-shrink and flex-basis
+* Default for flex-grow is 0, flex-shrink is 1 and for flex-basis it's auto
+* flex-basis for width of the items and when the Content is larger, it fits the Content
+  * Need to remove *gap* to see the flex-basis to what is being set
+* Flexbox shrinks an item to fit it in the Container even when the flex-basis is too high
+  * Setting flex-shrink: 0(no), then allows it to have the width specified in flex-basis
+* flex-grow: 1(yes) for all elements, fills up the available space evenly between the remaining items
+  * It doesn't have to be 1, it can be 1 and 2 for the other. 
+  * The one having 2 will be double the size of Available empty space than the other ones
+* Always use flex property
+
+### Adding Flexbox to Our Project
+
+* Manually giving article a flex-basis of 825px(which involves calculation) defeats the purpose of having flex-box
+* So we just use flex-grow to 1 to take up available space
+* Add flex: 1 to both the layouts to have equal width
