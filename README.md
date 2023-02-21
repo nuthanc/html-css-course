@@ -388,3 +388,86 @@
 * Manually giving article a flex-basis of 825px(which involves calculation) defeats the purpose of having flex-box
 * So we just use flex-grow to 1 to take up available space
 * Add flex: 1 to both the layouts to have equal width
+
+### Introduction to CSS Grid
+
+* The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. Grid was designed for two-dimensional layout - rows, and columns at the same time
+* Grid Container and Grid Items
+* display: grid to the Grid Container
+* Just like flexbox, the elements stretch across the entire cell
+* Each of the Items occupies **exactly the space it needs for its Contents vertically by default**
+* Vertically in our case all the Items are as tall as the Tallest element(One item given height of 150px) of the Grid Item
+* Horizontally it will stretch
+* grid-template-columns to define as many width columns as we want
+* Rows would be accommodated accordingly after all the columns are placed
+* Rows width can also be specified using grid-template-rows
+* gap for Grid gap. There is also separate gaps for row and column
+  * row-gap and column-gap
+* We just have Row Axis and Column Axis(No flex-direction kind of property)
+* Grid lines: Separate rows and columns
+  * Use Chrome Inspect and click on grid
+  * Grid lines for rows: #rows + 1
+  * Grid lines for cols: #cols + 1
+* Intersection of Grid lines produce Grid Cells
+* Gutters are Gaps(row and column-gap)
+* Grid track of row and column
+![grid](img/grid.png)
+  
+### Sizing Grid Columns and Rows
+
+* Using px is rigid
+* We will use fr unit
+* grid-template-columns: 150px 300px 200px 1fr;
+  * For last column to take up all available empty space
+  * Similar to setting flex: 1
+* auto keyword to take size to fill exactly its content
+* repeat keyword to repeat the unit n number of times
+* Explicit rows and Implicit rows
+  * Explicit because we explicitly specify the size for them in grid-template-rows
+  * Implicit when it exceeds the space and is added automatically
+* With 1fr for all, all the Items are as tall as the Tallest element(One item given height of 150px) of the Grid Item
+
+### Placing and Spanning Grid Items
+
+* Using grid-column and grid-row on the Grid Itemsa
+* Use Dev Tools to see the numbers and use them for start and end
+* grid-column: 2 / 3
+* If the second value is just +1, it can be omitted
+* For the above, we can write just, grid-column: 2
+* The second value is to span till
+* We can use span keyword
+* grid-column: 1 / span 3; which is equivalent to grid-column: 1 / 4;
+  * Start at 1 and span across 3 cells
+* -1 to span till the end (grid-column: 1 / -1;)
+
+### Aligning Grid Items and Tracks
+
+* Aligning Grid Tracks(Columns and Rows) inside the Grid Container(Only possible if it is smaller than the Grid Container)
+* Just like flexbox, you have justify-content
+* align-content instead of align-items for centering vertically
+  * space-between, start and end
+* Now for aligning within the tracks
+  * align-items for vertically
+  * justify-items for horizontally
+* For overriding individually,
+  * align-self and justify-self
+
+### Building a Simple CSS Grid Layout
+
+* CSS grid works perfectly well with Flexbox
+* So all the 1D layouts, continue using Flexbox
+  * Like Author
+  * Navigation
+* Overall Page layout is 2D, so we use Grid there
+* Just with display: grid, it display in rows by default
+* Used grid-template-columns of 2 and then for header and footer stretched it all the way
+* We use 300px for the aside but remaining space we just use 1fr to take up available empty space
+* The rows take the space required for its content
+* So it's **pretty common to only define grid-template-columns**
+
+### Challenge using CSS Grid
+
+* It's very easy for having a 2D layout with Grid
+* Wherever 1D layout is used, continue using Flex
+* Use grid with 3 columns, 1 of 250px since img is that width and use 1fr for the other 2 columns
+* For h2 and button, grid-column: 1 / -1;

@@ -14,6 +14,10 @@ body {
   margin: 50px auto;
   border: 4px solid black;
   position: relative;
+  /* grid */
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  column-gap: 30px;
 }
 
 .product-title {
@@ -22,6 +26,7 @@ body {
   background-color: #f7f5f4;
   font-size: 22px;
   padding: 15px;
+  grid-column: 1 / -1;
 }
 
 .container {
@@ -136,6 +141,7 @@ body {
   font-size: 20px;
   border: none;
   cursor: pointer;
+  grid-column: 1 / -1;
 }
 
 .add-cart:hover {
