@@ -4,6 +4,7 @@
 * Author's Repo: https://github.com/jonasschmedtmann/html-css-course
 * Flexbox and CSS Grid: https://github.com/nuthanc/angular_advanced_fast/blob/main/flexbox_css_grid/README.md
 * Author's Instruction in **author.md**
+* **Check the Pdf** as it has all the notes
 
 ### Resources
 
@@ -420,7 +421,7 @@
 * grid-template-columns: 150px 300px 200px 1fr;
   * For last column to take up all available empty space
   * Similar to setting flex: 1
-* auto keyword to take size to fill exactly its content
+* **auto** keyword to take size to fill exactly its content
 * repeat keyword to repeat the unit n number of times
 * Explicit rows and Implicit rows
   * Explicit because we explicitly specify the size for them in grid-template-rows
@@ -471,3 +472,126 @@
 * Wherever 1D layout is used, continue using Flex
 * Use grid with 3 columns, 1 of 250px since img is that width and use 1fr for the other 2 columns
 * For h2 and button, grid-column: 1 / -1;
+
+## Web Design Rules and Framework
+
+### Project Overview
+
+* Check starter/05-Design folder
+* html is already coded, we'll work on the css
+
+### Overview of Web Design and Website Personalities
+
+* Web Designers create the overall look and feel of a website
+* Web Developers implement the design using HTML, CSS and Javascript code
+* Check Good Design vs Bad Design in the pdf
+* Web Design Ingredients
+  * Typography: Formatting and Designing text
+  * Colors
+  * Images/Illustrations
+  * Icons
+  * Shadows
+  * Border Radius
+  * Whitespace
+  * Visual Hierarchy
+  * User Experience
+  * Components/Layout
+
+#### Website Personalities Overview(Check pdf for more)
+
+* Serious/Elegant
+* Minimalist/Simple
+* Plain/Neutral
+* Bold/Confident
+* Calm/Peaceful
+* Startup/Upbeat
+* Playful/Fun
+
+### Typography
+
+* Making text beautiful and easy to read
+* Serif: Tails at the end of each letter(Check pdf)
+* Sans-serif: No decorative lines and is Plain
+* Use only good and popular typefaces
+  * Sans-Serif: Inter, Open Sans, Roboto, Montserrat, Work Sans, Lato
+  * Serif: Merriweather, Aleo, Playfair Display, Cormorant, Cardo, Lora
+* It's okay to use just one typeface per page! If you want more, limit to 2 typefaces
+* Choose the right typeface according to your website personality
+* Regualar Font Weight of 400
+
+### Check the rest of the Design Guidelines from PDF
+
+### Implementing Typography
+
+* Chair website: We want a Modern look, so we'll use sans-serif
+* So checkout fonts.google.com and check for Inter
+* Link that in the html head
+  * Do it before our own CSS file
+* Set font-family on the body to Inter
+  * Can be used with or without quotes, but it is a good practice to use Quotes
+* https://typescale.com/
+* Take the font-sizes mentioned in style.css(Font Size System)
+* Computed tab gives all the styles applied for that element
+* Arrow keys up and down to increase or reduce by 1,and option key up and down to increase or reduce by .1
+* Establish the hierarchy between different headings with font-size
+* Have all normal text the same font-size and line-height
+
+### Colors
+
+* Choose the Right Color
+  * Check the pdf with the above title
+* Establish a color system
+* Colors and Typography
+
+
+
+## Components and Layout Patterns
+
+### Web Design Rules #10 - Part 1: Elements and Components
+
+* (Search for these titles in pdf)
+* Final Design: From Elements to Webpage
+  * Common Elements like Text, Buttons, Images, Input Elements and Tags
+  * Group the Elements in a Component
+  * Layout
+  * Webpage
+* Check pdf for Components and other index
+* Breadcrumbs
+* Pagination
+* Alert and Status Bars
+* Statistics
+* Gallery
+* Feature Box
+* Preview and Profile Cards
+* Accordion
+* Tabs
+* Carousel
+* Customer Testimonials
+* Customer Logos
+* Featured-In Logos
+* Steps
+* Forms
+* Tables
+* Pricing Tables
+* Modal Windows
+
+### Building an Accordion Component
+
+* Use 06-Components folder
+* Use Inter font(copy from 05-Design index.html)
+* Icons from heroicons.com
+* Colors from https://yeun.github.io/open-color/
+* Stroke for color for icons
+* box-shadow
+  * 1st - Horizontal offset
+  * 2nd - Vertical offset
+  * 3rd - Blur
+  * 4th - Spread Radius(Can be Skipped)
+  * 5th - Color
+* For having space between each of the Accordion Items
+  * Instead of giving margin-bottom to all items and finally removing it from the last item
+  * We could have display of flex to the accordiion container and then use gap property
+* Nice trick for opening only the 2nd item's hidden box
+  * Use another class like open along with the item class
+  * Then in selectors Use open class and descendant selector hidden-box
+  * This will apply only for the 2nd item now
