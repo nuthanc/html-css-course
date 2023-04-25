@@ -595,3 +595,29 @@
   * Use another class like open along with the item class
   * Then in selectors Use open class and descendant selector hidden-box
   * This will apply only for the 2nd item now
+
+### Building a Carousel Component
+
+* If width is not specified and only height is specified, then width will be adjusted accordingly to maintain the proportion
+* I used absolute positioning for image but Author used transform with scale and for the spacing used padding and gap
+* *align-items: center of flex works* even when the element is *absolutely* positioned
+* Setting top: 50% = 50% of parent container's height
+  * Check **Vertical Centering with Absolute Position and Transform** in Pdf
+  * This moves the top of the element to the middle, not the element itself
+  * Then use transform's translate to -50%(to the top) in the y-direction and-50% in the x-direction(to the left)
+  * This 50% is the actual element's height
+* For the dots, the author used button and space
+
+### Building a Table Component
+
+* table, tr, thead, tbody, th and td
+* For column of equal width, we could have added `table-layout: fixed;` in table
+* Author used the technique of giving `thead th` equal width of 25%(since there are 4 columns)
+
+### Building a Pagination Component
+
+* I had used padding for the Buttons but Author gave double the width of icon
+* For the links to be perfect circle, we cannot using padding(Padding top and bottom doesn't work on inline elements and also even if used with inline-block, it wouldn't be perfect)
+* Author gave equal width and height to make it a square first and then used border-radius
+* Also Circles were made even before Hover
+* Cool trick is `.btn:hover .btn-icon` using class like this, so that stroke would become white when hovered over button
