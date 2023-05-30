@@ -621,3 +621,12 @@
 * Author gave equal width and height to make it a square first and then used border-radius
 * Also Circles were made even before Hover
 * Cool trick is `.btn:hover .btn-icon` using class like this, so that stroke would become white when hovered over button
+
+### Building a Hero Section
+
+* This time using Rubik Google Fonts
+* Use 100vh for header height as 100% won't work
+* Adding Gradient to image to make text more readable
+  * Stack of background-images where the 1st background image is a gradient which is transparent
+  * 1st is in top of 2nd in background-image property
+* Centering done via **Vertical Centering with Absolute Position and Transform**
