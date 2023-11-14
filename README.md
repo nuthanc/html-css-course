@@ -1,5 +1,7 @@
 # html_and_css
 
+## Omnifood Project README in starter/07-Omnifood-Desktop
+
 * https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/
 * Author's Repo: https://github.com/jonasschmedtmann/html-css-course
 * Flexbox and CSS Grid: https://github.com/nuthanc/angular_advanced_fast/blob/main/flexbox_css_grid/README.md
@@ -630,3 +632,25 @@
   * Stack of background-images where the 1st background image is a gradient which is transparent
   * 1st is in top of 2nd in background-image property
 * Centering done via **Vertical Centering with Absolute Position and Transform**
+
+### Building a Web Application Layout
+
+* 5 parts of our Application Layout
+  * **nav** element for Navigation links
+  * **menu** element for menu buttons in a Web App
+  * **main** element for main piece of content of the Document
+  * **aside** element for Additional information
+* Background for above initially to see what is going on
+* In my implemenatation, I had used *auto and fr* for column values, but Author gave *fixed width* for most
+* The *body(grid container)* occupies *only the space that it needs for the content*
+  * But we want for the whole page, so height: 100vh;
+* **For some reason for the buttons**, the color **doesn't** get **inherited**
+* The buttons are centered because they are inline and treated like text(so text-align: center centered them)
+* For trash button placement at right, Author used **margin-left: auto**
+* Flexbox treats text as **Flex Item**
+* Author used **overflow: scroll** to section to keep it fixed so that it doesn't grow with content
+* `overflow` is for how elements that don't fit into container appear
+* But now the Flex items of section **shrink** *even though they have height of 96px* to accomodate this because all the Flex items have `flex-shrink: 1` by default
+* So need to add `flex-shrink: 0` to all the flex items(.email in this case)
+
+## Omnifood Project README in starter/07-Omnifood-Desktop
