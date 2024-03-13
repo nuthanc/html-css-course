@@ -144,6 +144,8 @@
   * similar to article element, but article element is self-contained
   * For section to exist, there should be multiple sections which are then part of something bigger
 * Give classname prefixed with section `class="section-hero"` so that it becomes easy to identify
+* Anchor tag for going somewhere and button for Actions(not related to Navigation)
+  * That is why we have used anchor tag and styled them like buttons
 * Select everything using classes in css for consistency
 * `css grids` for the section-hero even though it is 1D layout to have equal sized columns and to have uniform layouts across the page
 * It could have been done using flex also, something like this
@@ -201,14 +203,83 @@
     * `box-shadow: inset 0 0 0 3px #fff;`
 * Nice animations for buttons using just css
   * `transition: all 1s`
-  * Put transition on the original state
+  * Put transition on the **original state**
   * We require for only background-color, so ``transition: background-color 0.3s``
   * Property to animate, over how much time
 * For space between the buttons, we could just add `margin-right` to `btn--full`
   * But that's not the right way as all the button `btn--full` class will have margin-right
   * Instead we will add helper class `margin-right-sm`
+  * We also add important so that it gets applied over other styles
 ```css
 .margin-right-sm {
-  margin-right: 1.6rem;
+  margin-right: 1.6rem !important;
 }
 ```
+* Choosing Inter typeface and paste it before our own Stylesheet
+  * But we should use a *Rounder typeface* for Calm personality
+  * *Rubik* is better suited for this
+* Delivered meals customer images below the buttons
+* `display: flex` for **.delivered-meals** because here we don't care about the column size and let the content determine the width
+* For the *images to overlap* on each other, use negative margin(**margin-right: -1.6rem**) on the image itself as negative gap doesn't seem to work on the flex container
+* For the overlapping images, border of *same color as the background*
+* **Coolers(https://coolors.co/) -> Contrast Checker** page for checking the contrast
+
+### Building the Header
+
+* Navigation and Logo *outside of fixed width container*
+* Use `header` element with class before `section-hero`
+  * It consisits of img and nav elements
+* Using `main` element -> Main part of the Page
+  * Doesn't include header and footer, which remains the same for multiple pages
+* Format our stylesheet to various sections like GENERAL REUSABLE COMPONENTS, HEADER and HERO SECTION
+* For logo image, usually we style the **height**
+* We want image on 1 side and Navigation on the other and we use flexbox to achieve this
+* After adding header(with img and nav), it has white background, make it have the *same background as the Hero section*
+* Giving a **fixed height** to header(instead of content determining the height and giving some padding)
+  * This is done to make the **Navigation sticky(same position when scrolled down)** as it is easier with fixed height
+* Padding only for left and right is given because for top and bottom we have already given fixed height
+* When resized, the text is glued to the sides, so to fix it, we use padding to the hero class
+
+### Building the Navigation
+
+* Initially in our previous project, we used a bunch of anchor elements inside Navigation
+* But the proper way to do this is using *anchor tag* within *unordered lists*
+* Use `transition` for changing colors on hover on **original state**
+* Usually the last link will be a CTA
+* `display: inline-block` for all the links so that padding applies properly(for now, only for last link)
+
+### Setting up a Reusable Grid
+
+* Add another section(section-how)
+* Reusable grid by creating a grid class and variation classes
+```css
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+* Also create reusable container class
+```css
+.container {
+  max-width: 120rem;
+  /* Padding so that content is no longer glued to the sides */
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+```
+* Max-width of 120rem(1200 px) is a standard. We also sometimes use 1140px
+* We would want the background-color or image to extend to the whole width and not just the fixed width, so we wrap the fixed width within a div, just like how we did for hero section
+* Could have used this for hero section, but we have a bigger width(130rem). Usually we have hero section bigger than rest of the content
+
+### Building the How-It-Works Section
+
+* Check out "Building the How-It-Works Section" in pdf for the design
+* Remember there should only 1 h1 per page, so we will use h2
